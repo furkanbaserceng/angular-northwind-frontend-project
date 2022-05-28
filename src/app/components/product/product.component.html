@@ -1,0 +1,22 @@
+<!-- <ul>
+
+    <li *ngFor="let product of products"> {{product.productName}} </li>
+
+
+</ul> -->
+
+
+
+<table class="table">
+    <th>Ürünler</th>
+    <tr *ngFor="let product of products">
+
+        
+        <td> {{product.productId}} </td>
+        <td> {{product.productName}} </td>
+        <td> {{product.categoryId}} </td>
+        <td> {{product.unitPrice}} </td>
+        <td> {{product.unitsInStock}} </td>
+
+    </tr>
+</table>

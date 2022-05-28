@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'northwindfrontendproject';
+  title:string = 'northwindfrontendproject';
+  name:string="Furkan Başer";
+
+ 
+
+
 }
