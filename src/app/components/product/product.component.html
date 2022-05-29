@@ -1,6 +1,16 @@
 
+
+
+
+
 <table class="table">
-    <th>Ürünler</th>
+    <thead>
+        <th>Id</th>
+        <th>Product Name</th>
+        <th>Category Id</th>
+        <th>Unit Price</th>
+        <th>Units In Stock</th>
+    </thead>
     <tr *ngFor="let product of products">
 
         
@@ -12,3 +22,8 @@
 
     </tr>
 </table>
+
+
+<div class="spinner-border text-primary" role="status" *ngIf="dataLoaded==false">
+    <span class="visually-hidden">Loading...</span>
+  </div>
