@@ -1,4 +1,11 @@
-<ul class="list-group">
-    <li class="list-group-item" *ngFor="let category of categories"> {{category.categoryName}} </li>
+
+
+<div class="spinner-border text-primary" role="status" *ngIf="dataLoaded==false">
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<ul class="list-group" *ngIf="dataLoaded==true">
     
-  </ul>
+  <li class="list-group-item" *ngFor="let category of categories"> {{category.categoryName}} </li>
+    
+</ul>

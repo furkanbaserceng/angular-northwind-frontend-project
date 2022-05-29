@@ -1,9 +1,13 @@
 
 
 
+<div class="spinner-border text-primary" role="status" *ngIf="dataLoaded==false">
+    <span class="visually-hidden">Loading...</span>
+  </div>
 
 
-<table class="table">
+
+<table *ngIf="dataLoaded==true" class="table">
     <thead>
         <th>Id</th>
         <th>Product Name</th>
@@ -22,8 +26,3 @@
 
     </tr>
 </table>
-
-
-<div class="spinner-border text-primary" role="status" *ngIf="dataLoaded==false">
-    <span class="visually-hidden">Loading...</span>
-  </div>
