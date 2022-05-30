@@ -39,6 +39,32 @@ export class CategoryComponent implements OnInit {
       
   }
 
+  getCategoryClass(category:Category){ //bu metod li elemanının css classını belirleyecek dinamik olarak.
+
+    if(category==this.currentCategory){
+
+      return "list-group-item active";
+
+    }
+    else{
+      return "list-group-item";
+    }
+
+
+  }
+
+  getAllCategoryClass(){
+    if(!this.currentCategory){
+      return "list-group-item active";
+    }
+    else{
+      return "list-group-item";
+    }
+  }
+
+  
+
+
 
 
 }
