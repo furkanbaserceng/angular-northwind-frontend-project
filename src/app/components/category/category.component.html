@@ -6,6 +6,10 @@
 
 <ul class="list-group" *ngIf="dataLoaded==true">
     
-  <li class="list-group-item" *ngFor="let category of categories"> {{category.categoryName}} </li>
+  <li *ngFor="let category of categories" (click)="setCurrentCategory(category)" 
+       class="list-group-item" > {{category.categoryName}} </li>
     
 </ul>
+
+
+<h5 *ngIf="currentCategory"> {{currentCategory.categoryName}} seçildi. </h5>

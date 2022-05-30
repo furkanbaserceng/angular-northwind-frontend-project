@@ -11,13 +11,13 @@ export class CategoryComponent implements OnInit {
 
   categories : Category[]=[];
   dataLoaded : boolean = false;
+  currentCategory : Category;
 
   constructor(private categoryService : CategoryService) { }
 
   ngOnInit(): void {
 
     this.getCategories();
-
 
   }
 
@@ -31,8 +31,12 @@ export class CategoryComponent implements OnInit {
       this.dataLoaded=true;
 
     })
+  }
 
+  setCurrentCategory(category : Category){
 
+      this.currentCategory=category;
+      
   }
 
 
