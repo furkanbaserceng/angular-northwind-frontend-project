@@ -15,6 +15,7 @@ export class ProductComponent implements OnInit {
 
   products : Product[] = []; //component htttpclient enjekte etmez
   dataLoaded: boolean=false;
+  filterText="";
   
   constructor(private productService : ProductService,
               private activatedRoute:ActivatedRoute) { }
