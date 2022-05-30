@@ -12,6 +12,7 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 
 
 
@@ -22,7 +23,8 @@ import { ToastrModule } from 'ngx-toastr';
     CategoryComponent,
     NaviComponent,
     VatAddedPipe,
-    FilterPipePipe
+    FilterPipePipe,
+    CartSummaryComponent
     
   ],
   imports: [
