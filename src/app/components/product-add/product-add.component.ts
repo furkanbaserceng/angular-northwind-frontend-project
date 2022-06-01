@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder,FormControl,Validators} from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { ProductService } from 'src/app/services/product.service';
  
 
 @Component({
@@ -11,7 +13,9 @@ export class ProductAddComponent implements OnInit {
 
 
   productAddForm : FormGroup;
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder,
+              private productService:ProductService,
+              private toastrService:ToastrService) { }
 
   ngOnInit(): void {
 
@@ -37,8 +41,23 @@ export class ProductAddComponent implements OnInit {
   add(){
 
 
-    let productModel=Object.assign({},this.productAddForm.value);
-    console.log(productModel);
+    if(this.productAddForm.valid){
+      let productModel=Object.assign({},this.productAddForm.value);
+      this.productService.add(productModel).subscribe(data=>{
+        console.log(data);
+        this.toastrService.success("Product added successfully!","Information");
+      },responseError=>{
+        console.log(responseError.error);
+        this.toastrService.error(responseError.error);
+      });
+    }
+    else{
+
+      this.toastrService.error("Form is invalid!","Attention!");
+
+
+    }
+    //console.log(productModel);
     
 
 
